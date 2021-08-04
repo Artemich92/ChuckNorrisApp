@@ -2,6 +2,8 @@ package ru.artkolest.chucknorrisapp
 
 import android.app.Application
 import ru.artkolest.chucknorrisapp.di.AppComponent
+import ru.artkolest.chucknorrisapp.di.AppModule
+import ru.artkolest.chucknorrisapp.di.DaggerAppComponent
 
 class App: Application() {
 
@@ -9,7 +11,7 @@ class App: Application() {
 
     override fun onCreate() {
         super.onCreate()
-        instanse = this
+       instanse = this
         setUpDagger()
     }
 

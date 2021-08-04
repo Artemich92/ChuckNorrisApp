@@ -6,6 +6,7 @@ import ru.artkolest.chucknorrisapp.di.components.JokeInfoComponent
 import ru.artkolest.chucknorrisapp.di.components.JokesListComponent
 import ru.artkolest.chucknorrisapp.di.components.MainComponent
 import ru.artkolest.chucknorrisapp.di.modules.NetworkModule
+
 import javax.inject.Singleton
 
 @Singleton

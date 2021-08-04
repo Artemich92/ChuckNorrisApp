@@ -5,11 +5,11 @@ import ru.artkolest.chucknorrisapp.presentation.joke_info.JokeInfoContract
 
 interface JokesListContract {
 
-    interface view : BaseContract.View {
+    interface View : BaseContract.View {
 
     }
 
     interface Presenter : BaseContract.Presenter {
-        var view: JokeInfoContract.View
+        var view: View
     }
 }
