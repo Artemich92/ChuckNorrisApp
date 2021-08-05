@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/jokesListFragment">
+
+    <fragment
+        android:id="@+id/jokesListFragment"
+        android:name="ru.artkolest.chucknorrisapp.presentation.jokes_list.JokesListFragment"
+        android:label="JokesListFragment"
+        tools:layout="@layout/fragment_jokes_list">
+        <action
+            android:id="@+id/action_jokesListFragment_to_jokeInfoFragment"
+            app:destination="@id/jokeInfoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/jokeInfoFragment"
+        android:name="ru.artkolest.chucknorrisapp.presentation.joke_info.JokeInfoFragment"
+        android:label="JokeInfoFragment"
+        tools:layout="@layout/fragment_joke_info"/>
+</navigation>

@@ -7,7 +7,7 @@ import javax.inject.Inject
 
 @JokesListScope
 class JokesListPresenter @Inject constructor(
-private val networkDataSource: NetworkDataSource
+//private val networkDataSource: NetworkDataSource
 ): BasePresenter<JokesListContract.View>(), JokesListContract.Presenter{
 
     override lateinit var view: JokesListContract.View
