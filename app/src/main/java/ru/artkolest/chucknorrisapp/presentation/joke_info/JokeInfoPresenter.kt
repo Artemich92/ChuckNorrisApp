@@ -15,12 +15,4 @@ JokeInfoContract.Presenter{
     override fun start() {
 
     }
-
-    override fun stop() {
-
-    }
-
-    override fun dispose() {
-
-    }
 }

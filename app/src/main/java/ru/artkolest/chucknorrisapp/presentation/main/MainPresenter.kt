@@ -11,12 +11,4 @@ class MainPresenter @Inject constructor()
     override fun start() {
 
     }
-
-    override fun stop() {
-
-    }
-
-    override fun dispose() {
-
-    }
 }
