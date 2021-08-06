@@ -28,6 +28,8 @@ JokeInfoContract.View{
 
     private fun initUI() = with(binding){
         toolbar.tvTitle.setText(R.string.app_info)
+        webView.loadUrl("https://www.icndb.com/api/")
+
     }
 
     override fun createComponent() = App.instanse.getAppComponent()

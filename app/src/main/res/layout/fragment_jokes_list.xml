@@ -2,10 +2,10 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="56dp"
+    android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".presentation.jokes_list.JokesListFragment"
-    android:background="@color/colorPrimary">
+    android:background="@color/white">
 
 
     <include
@@ -19,7 +19,8 @@
         android:id="@+id/rvPhotos"
         android:layout_width="0dp"
         android:layout_height="400dp"
-        app:layout_constraintTop_toBottomOf="parent"
+        android:layout_marginTop="15dp"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:itemCount="2"
@@ -29,7 +30,7 @@
         android:id="@+id/iLAmountJokes"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         android:padding="16dp"
         android:textColorHint="@color/colorPrimary"
         app:layout_constraintTop_toBottomOf="@+id/rvPhotos"
@@ -52,7 +53,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="@string/btnReload"
-        android:textColor="@color/colorPrimary"
+        android:textColor="@color/white"
         app:layout_constraintTop_toBottomOf="@id/iLAmountJokes"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
