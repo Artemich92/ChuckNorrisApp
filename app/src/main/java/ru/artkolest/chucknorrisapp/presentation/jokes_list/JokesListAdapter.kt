@@ -22,10 +22,14 @@ class JokesListAdapter(): RecyclerView.Adapter<JokesListAdapter.JokesViewHolder>
         holder.bind(jokes[position])
     }
 
-    fun setJoke(jokes: List<Value>){
+    fun setJoke(jokes: ArrayList<Value>){
         this.jokes.clear()
         this.jokes.addAll(jokes)
         this.notifyDataSetChanged()
+    }
+
+    fun getJokes() : ArrayList<Value>{
+        return this.jokes
     }
 
     override fun getItemCount(): Int {

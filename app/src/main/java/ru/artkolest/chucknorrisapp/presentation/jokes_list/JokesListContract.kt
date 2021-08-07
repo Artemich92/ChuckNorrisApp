@@ -6,7 +6,7 @@ import ru.artkolest.chucknorrisapp.domain.model.Value
 interface JokesListContract {
 
     interface View : BaseContract.View {
-        fun onSetData(postInfo: List<Value>)
+        fun onSetData(postInfo: ArrayList<Value>)
         fun showError(throwable: Throwable)
         fun onShowErrorToast()
         fun onShowLoad()

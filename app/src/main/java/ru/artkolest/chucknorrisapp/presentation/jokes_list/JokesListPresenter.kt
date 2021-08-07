@@ -20,6 +20,7 @@ class JokesListPresenter @Inject constructor(
 
     override fun loadJokes(countJokes: String?) {
         if (countJokes.isNullOrEmpty().not()) {
+            view.onShowLoad()
             disposables += networkDataSource.getJokes(countJokes.toString())
                 .toObservable()
                 .flatMapIterable { it.value }

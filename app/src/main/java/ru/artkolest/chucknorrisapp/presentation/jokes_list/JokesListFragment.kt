@@ -23,6 +23,16 @@ JokesListContract.View{
     private val binding by viewBinding(FragmentJokesListBinding::bind)
     private lateinit var navController: NavController
     private lateinit var adapter: JokesListAdapter
+    private lateinit var jokesList: ArrayList<Value>
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        if (savedInstanceState != null) {
+            jokesList = savedInstanceState.getParcelableArrayList<Value>(JOKES_LIST) as ArrayList<Value>
+        } else{
+            jokesList = ArrayList()
+        }
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -30,7 +40,6 @@ JokesListContract.View{
         navController = view.findNavController()
         initUI()
         initRecyclerView()
-        //binding.toolbar
     }
 
     private fun initUI() = with(binding){
@@ -38,7 +47,6 @@ JokesListContract.View{
         btnReload.onClick{
             presenter.loadJokes(etCountJokes.text.toString())
         }
-
     }
 
     private fun initRecyclerView(){
@@ -47,10 +55,17 @@ JokesListContract.View{
         adapter = JokesListAdapter()
         rvJokes.setHasFixedSize(true)
         rvJokes.adapter = adapter
+        if (jokesList.size > 0) adapter.setJoke(jokesList)
     }
 
-    override fun onSetData(jokes: List<Value>) {
+    override fun onSetData(jokes: ArrayList<Value>) {
+        jokesList = jokes
         adapter.setJoke(jokes)
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putParcelableArrayList(JOKES_LIST, jokesList)
     }
 
     override fun showError(throwable: Throwable) {
@@ -67,7 +82,11 @@ JokesListContract.View{
 
     override fun onHideLoad() = gLoad.hide()
 
-
     override fun createComponent() = App.instanse.getAppComponent()
         .createJokesListFragment().inject(this)
+
+    companion object{
+        private const val JOKES_LIST = "jokesList"
+    }
 }
+

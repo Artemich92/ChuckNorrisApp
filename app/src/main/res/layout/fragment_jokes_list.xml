@@ -38,7 +38,7 @@
         android:id="@+id/pbLoad"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:visibility="visible"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="@id/rvJokes"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -52,7 +52,7 @@
         android:text="@string/load"
         app:layout_constraintEnd_toEndOf="@+id/pbLoad"
         app:layout_constraintStart_toStartOf="@+id/pbLoad"
-        app:layout_constraintTop_toBottomOf="@+id/pbLoad" />
+        app:layout_constraintBottom_toBottomOf="@+id/pbLoad" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/iLAmountJokes"
