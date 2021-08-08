@@ -28,10 +28,6 @@ class JokesListAdapter(): RecyclerView.Adapter<JokesListAdapter.JokesViewHolder>
         this.notifyDataSetChanged()
     }
 
-    fun getJokes() : ArrayList<Value>{
-        return this.jokes
-    }
-
     override fun getItemCount(): Int {
         return jokes.size
     }

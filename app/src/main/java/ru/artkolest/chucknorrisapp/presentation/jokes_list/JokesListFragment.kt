@@ -88,5 +88,10 @@ JokesListContract.View{
     companion object{
         private const val JOKES_LIST = "jokesList"
     }
+
+    override fun onDestroyView() {
+        presenter.dispose()
+        super.onDestroyView()
+    }
 }
 

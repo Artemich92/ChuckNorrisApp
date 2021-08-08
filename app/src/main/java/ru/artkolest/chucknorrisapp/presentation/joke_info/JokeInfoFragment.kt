@@ -70,6 +70,11 @@ JokeInfoContract.View{
     override fun createComponent() = App.instanse.getAppComponent()
         .createJokeInfoFragment().inject(this)
 
+    override fun onDestroyView() {
+
+        super.onDestroyView()
+    }
+
     companion object{
         private const val API_URL = "https://www.icndb.com/api/"
     }
