@@ -1,17 +1,13 @@
 package ru.artkolest.chucknorrisapp.presentation.joke_info
 
-import android.graphics.Bitmap
 import android.os.Bundle
 import android.view.View
-import android.webkit.WebView
 import android.webkit.WebViewClient
-import android.widget.Toast
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.github.satoshun.reactivex.webkit.data.OnPageFinished
 import com.github.satoshun.reactivex.webkit.data.OnPageStarted
-import io.reactivex.Completable.merge
 import io.reactivex.disposables.CompositeDisposable
 import kotlinx.android.synthetic.main.fragment_joke_info.*
 import kotlinx.android.synthetic.main.fragment_jokes_list.gLoad
@@ -21,18 +17,10 @@ import ru.artkolest.chucknorrisapp.base.BaseFragment
 import ru.artkolest.chucknorrisapp.base.extensions.hide
 import ru.artkolest.chucknorrisapp.base.extensions.show
 import ru.artkolest.chucknorrisapp.databinding.FragmentJokeInfoBinding
-import java.util.*
-
-import android.webkit.WebChromeClient
-
-import androidx.appcompat.app.AppCompatActivity
-import com.github.satoshun.reactivex.webkit.chromeEvents
-import com.github.satoshun.reactivex.webkit.data.OnJsBeforeUnload
-
-import com.github.satoshun.reactivex.webkit.data.OnReceivedIcon
-import com.github.satoshun.reactivex.webkit.data.ShouldInterceptRequest
 import com.github.satoshun.reactivex.webkit.events
 import io.reactivex.Observable
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.schedulers.Schedulers
 
 
 class JokeInfoFragment : BaseFragment<JokeInfoContract.Presenter>(R.layout.fragment_joke_info),
@@ -76,7 +64,6 @@ JokeInfoContract.View{
         )
         webView.loadUrl(API_URL)
     }
-
 
     override fun onSaveInstanceState(outState: Bundle) {
     super.onSaveInstanceState(outState)
